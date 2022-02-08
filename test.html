@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body onload="main()">
+    <p id = "log"></p>
+  </body>
+
+  <script>
+    function log(msg) {
+      document.getElementById("log").innerHTML = msg
+    }
+    function main(){
+      log("test work")
+      let Http = new XMLHttpRequest();
+let url='http://9315-2600-4040-1298-e700-8191-3bf-72e-f2e4.ngrok.io/';
+Http.open("GET", url);
+Http.send();
+Http.onload = function(){
+  log(Http.responseText)
+}
+    }
+    </script>
+</html>
